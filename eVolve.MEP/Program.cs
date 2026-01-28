@@ -56,6 +56,7 @@ catch (Exception exception)
 Console.WriteLine("Completed...");
 
 
+// This could be improved if the garage interface was separated from the lot interface. Time limit past so for a later refactoring.
 IGarage? FindAGarage(IVehicle vehicle)
 {
     // if the vehicle weight is > 1500 for the garage, return lot. can't take buses either
