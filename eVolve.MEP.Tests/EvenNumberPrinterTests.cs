@@ -1,4 +1,5 @@
 using eVolve.MEP;
+using Xunit;
 
 namespace eVolve.MEP.Tests;
 
@@ -132,5 +133,35 @@ public class EvenNumberPrinterTests
         Assert.Equal(25, lines.Length);
         Assert.Equal("4", lines[0]);
         Assert.Equal("100", lines[^1]);
+    }
+
+    [Fact]
+    public void Print_Given21And7_Returns14()
+    {
+        // Requirement example 2
+        var lines = GetOutputLines(() => EvenNumberPrinter.Print(21, 7));
+
+        Assert.Single(lines);
+        Assert.Equal("14", lines[0]);
+    }
+
+    [Fact]
+    public void Print_Given3And10_Returns6()
+    {
+        // Requirement example 4
+        var lines = GetOutputLines(() => EvenNumberPrinter.Print(10, 3));
+
+        Assert.Single(lines);
+        Assert.Equal("6", lines[0]);
+    }
+
+    [Fact]
+    public void Print_Given2And2_Returns2()
+    {
+        // Requirement example 5
+        var lines = GetOutputLines(() => EvenNumberPrinter.Print(2, 2));
+
+        Assert.Single(lines);
+        Assert.Equal("2", lines[0]);
     }
 }
